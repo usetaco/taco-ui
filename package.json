@@ -1,0 +1,75 @@
+{
+  "name": "taco-ui",
+  "version": "0.1.0",
+  "main": "dist/index.bundle.js",
+  "module": "dist/index.bundle.js",
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.28",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "framer-motion": "^10.12.10",
+    "hex-to-css-filter": "^5.4.0",
+    "js-cookie": "^3.0.5",
+    "react": "^18.2.0",
+    "react-canvas-confetti": "^1.4.0",
+    "react-dom": "^18.2.0",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-scripts": "5.0.1",
+    "react-share": "^4.4.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-ts": "^3.2.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.21.5",
+    "@types/js-cookie": "^3.0.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "babel-cli": "^6.26.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-loader": "^9.4.2",
+    "webpack-cli": "^5.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:ui": "rm -rf taco-ui && webpack"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
