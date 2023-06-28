@@ -1,11 +1,20 @@
-# Taco UI Library
+# Taco UI
+A React component library built on top of [Chakra UI](https://chakra-ui.com/)
 
-This React app hosts styleable web components used in Taco products.
+### Installation
 
-### Getting started
+Install using `npm install taco-labs-ui`
 
-After cloning the repo:
+### Usage 
 
-- ```npm install ``` to install dependencies
-- ```npm start ``` to run development
-  - The default [localhost](http://localhost:3000) port is 3000
+Import components from the library:
+`import { Button } from 'taco-labs-ui'`
+
+and use them in your React components: 
+```
+return (
+    ...
+    <Button />
+    ...
+)
+```
