@@ -9,7 +9,7 @@
     "taco",
     "labs"
   ],
-  "version": "0.2.0",
+  "version": "0.5.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -26,22 +26,14 @@
     "@chakra-ui/react": "^2.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "framer-motion": "^10.12.17",
-    "node-sass": "^7.0.3",
-    "web-vitals": "^3.3.2"
+    "framer-motion": "^10.12.17"
   },
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "sass": "node-sass src/lib/components/styles/main.scss src/App.css -w",
-    "build": "rm -rf dist && cross-env NODE_ENV=production babel src/lib --out-dir dist --copy-files",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "build": "rm -rf ./dist && tsc",
+    "prepare": "npm run build"
   },
   "browserslist": {
     "production": [
@@ -56,12 +48,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.22.5",
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-typescript": "^7.22.5",
-    "cross-env": "^7.0.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
