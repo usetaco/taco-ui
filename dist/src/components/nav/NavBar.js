@@ -26,9 +26,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var NavBar = function (_a) {
-    var color = _a.color;
+    var color = _a.color, onClick = _a.onClick;
     return (React.createElement(react_1.Flex, { position: "fixed", align: "center", justify: "space-between", width: "100%", padding: 2, backgroundColor: "#fff" },
-        React.createElement(react_1.Image, { src: "/logo.png", width: "200px", height: "auto" })));
+        React.createElement(react_1.Image, { src: "/logo.png", width: "200px", height: "auto", _hover: { cursor: 'pointer' }, onClick: onClick })));
 };
 exports.default = NavBar;
 //# sourceMappingURL=NavBar.js.map

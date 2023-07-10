@@ -10,12 +10,11 @@ interface SecondaryButtonProps {
 const SecondaryButton: FC<SecondaryButtonProps> = ({ text, onClick }) => {
   return (
     <Button
-      backgroundColor="secondary"
-      color="white"
-      fontSize="14px"
+      backgroundColor="#6C757D"
+      color="#fff"
       fontWeight={400}
       px={3}
-      _hover={{ backgroundColor: 'primary', color: 'white' }}
+      _hover={{ backgroundColor: '#000', color: '#fff' }}
       onClick={onClick}
     >
       {text}

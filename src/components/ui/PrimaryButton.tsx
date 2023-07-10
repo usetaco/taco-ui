@@ -5,15 +5,25 @@ import { Button } from '@chakra-ui/react';
 interface PrimaryButtonProps {
   text: string;
   onClick: () => any;
+  disabled?: boolean;
+  loading?: boolean;
 }
 
-const PrimaryButton: FC<PrimaryButtonProps> = ({ text, onClick }) => {
+const PrimaryButton: FC<PrimaryButtonProps> = ({
+  text,
+  onClick,
+  disabled = false,
+  loading = false,
+}) => {
   return (
     <Button
-      backgroundColor="primary"
-      color="white"
-      _hover={{ backgroundColor: 'secondary', color: 'white' }}
+      backgroundColor="#000"
+      color="#fff"
+      _hover={{ backgroundColor: '#6C757D', color: '#fff' }}
       onClick={onClick}
+      isDisabled={disabled}
+      isLoading={loading}
+      fontWeight={400}
     >
       {text}
     </Button>

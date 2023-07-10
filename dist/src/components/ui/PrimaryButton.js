@@ -26,8 +26,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var PrimaryButton = function (_a) {
-    var text = _a.text, onClick = _a.onClick;
-    return (React.createElement(react_1.Button, { backgroundColor: "primary", color: "white", _hover: { backgroundColor: 'secondary', color: 'white' }, onClick: onClick }, text));
+    var text = _a.text, onClick = _a.onClick, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.loading, loading = _c === void 0 ? false : _c;
+    return (React.createElement(react_1.Button, { backgroundColor: "#000", color: "#fff", _hover: { backgroundColor: '#6C757D', color: '#fff' }, onClick: onClick, isDisabled: disabled, isLoading: loading, fontWeight: 400 }, text));
 };
 exports.default = PrimaryButton;
 //# sourceMappingURL=PrimaryButton.js.map

@@ -26,9 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var PageHeader = function (_a) {
-    var title = _a.title, button = _a.button;
-    return (React.createElement(react_1.Flex, { align: "center", justify: "space-between", width: "100%", padding: 3, mb: 2 },
-        React.createElement(react_1.Text, { variant: "title" }, title),
+    var title = _a.title, subtitle = _a.subtitle, button = _a.button;
+    return (React.createElement(react_1.Flex, { align: "center", justify: "space-between", width: "100%", mb: 4 },
+        React.createElement(react_1.Flex, { direction: "column", gap: 2 },
+            React.createElement(react_1.Text, { variant: "title" }, title),
+            subtitle && React.createElement(react_1.Text, { variant: "subtitle" }, subtitle)),
         button && button));
 };
 exports.default = PageHeader;

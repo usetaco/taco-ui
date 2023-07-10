@@ -4,9 +4,10 @@ import { Flex, Image } from '@chakra-ui/react';
 
 interface NavBarProps {
   color: string;
+  onClick: any;
 }
 
-const NavBar: FC<NavBarProps> = ({ color }) => {
+const NavBar: FC<NavBarProps> = ({ color, onClick }) => {
   return (
     <Flex
       position="fixed"
@@ -16,7 +17,13 @@ const NavBar: FC<NavBarProps> = ({ color }) => {
       padding={2}
       backgroundColor="#fff"
     >
-      <Image src="/logo.png" width="200px" height="auto" />
+      <Image
+        src="/logo.png"
+        width="200px"
+        height="auto"
+        _hover={{ cursor: 'pointer' }}
+        onClick={onClick}
+      />
     </Flex>
   );
 };

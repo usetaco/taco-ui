@@ -27,7 +27,7 @@ var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var SecondaryButton = function (_a) {
     var text = _a.text, onClick = _a.onClick;
-    return (React.createElement(react_1.Button, { backgroundColor: "secondary", color: "white", fontSize: "14px", fontWeight: 400, px: 3, _hover: { backgroundColor: 'primary', color: 'white' }, onClick: onClick }, text));
+    return (React.createElement(react_1.Button, { backgroundColor: "#6C757D", color: "#fff", fontWeight: 400, px: 3, _hover: { backgroundColor: '#000', color: '#fff' }, onClick: onClick }, text));
 };
 exports.default = SecondaryButton;
 //# sourceMappingURL=SecondaryButton.js.map
