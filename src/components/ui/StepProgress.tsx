@@ -55,7 +55,7 @@ const StepProgress: FC<StepProgressProps> = ({
   return (
     <Flex direction="column" gap={5}>
       <Flex direction="column" gap={3}>
-        <Text variant="title">{title}</Text>
+        <Text variant="subtitle">{title}</Text>
         <Progress
           hasStripe
           value={Math.round((currentStep / stepLabels.length) * 100)}

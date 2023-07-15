@@ -26,10 +26,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var EnabledIndicator = function (_a) {
-    var enabled = _a.enabled;
+    var enabled = _a.enabled, statusText = _a.statusText;
     return (React.createElement(react_1.Flex, { align: "center", gap: "5px" },
         React.createElement(react_1.Box, { height: "20px", width: "20px", backgroundColor: enabled ? '#11D400' : '#CECECE', borderRadius: "50%" }),
-        React.createElement(react_1.Text, { fontSize: "12px", fontWeight: 400, color: enabled ? '#000' : '#636363' }, enabled ? 'Active' : 'Disabled')));
+        React.createElement(react_1.Text, { fontSize: "16px", fontWeight: 400, color: enabled ? '#000' : '#636363' }, statusText && statusText.length > 0
+            ? statusText
+            : enabled
+                ? 'Active'
+                : 'Disabled')));
 };
 exports.default = EnabledIndicator;
 //# sourceMappingURL=EnabledIndicator.js.map

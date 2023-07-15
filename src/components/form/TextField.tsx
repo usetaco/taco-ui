@@ -6,29 +6,35 @@ import FieldLabel from './FieldLabel';
 interface TextFieldProps {
   type?: 'text' | 'password' | 'email' | undefined;
   label?: string;
+  name?: string;
   placeholder?: string;
   desc?: string;
   value: any;
   setValue: any;
   disabled?: boolean;
+  required?: boolean;
 }
 
 const TextField: FC<TextFieldProps> = ({
   type = 'text',
   label,
+  name,
   desc,
   placeholder,
   value,
   setValue,
   disabled = false,
+  required = false,
 }) => {
   return (
     <FormControl>
       <Flex direction="column" gap="8px">
-        {label && <FieldLabel title={label} subTitle={desc} />}
+        {label && (
+          <FieldLabel title={required ? `${label} *` : label} subTitle={desc} />
+        )}
         <Input
           type={type}
-          name={label}
+          name={name ? name : label}
           id={label}
           value={value || ''}
           onChange={(e: any) => {

@@ -38,7 +38,7 @@ var StepProgress = function (_a) {
     var title = _a.title, currentStep = _a.currentStep, stepLabels = _a.stepLabels;
     return (React.createElement(react_1.Flex, { direction: "column", gap: 5 },
         React.createElement(react_1.Flex, { direction: "column", gap: 3 },
-            React.createElement(react_1.Text, { variant: "title" }, title),
+            React.createElement(react_1.Text, { variant: "subtitle" }, title),
             React.createElement(react_1.Progress, { hasStripe: true, value: Math.round((currentStep / stepLabels.length) * 100), borderRadius: "6px", colorScheme: "green" }),
             React.createElement(react_1.Text, { variant: "label" }, "".concat(currentStep, " of ").concat(stepLabels.length, " steps complete"))),
         React.createElement(react_1.Flex, { direction: "column", gap: 3 }, stepLabels.map(function (s, idx) {

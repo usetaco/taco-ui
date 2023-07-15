@@ -4,9 +4,13 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 
 interface EnabledIndicatorProps {
   enabled: boolean;
+  statusText?: string;
 }
 
-const EnabledIndicator: FC<EnabledIndicatorProps> = ({ enabled }) => {
+const EnabledIndicator: FC<EnabledIndicatorProps> = ({
+  enabled,
+  statusText,
+}) => {
   return (
     <Flex align="center" gap="5px">
       <Box
@@ -16,11 +20,15 @@ const EnabledIndicator: FC<EnabledIndicatorProps> = ({ enabled }) => {
         borderRadius="50%"
       />
       <Text
-        fontSize="12px"
+        fontSize="16px"
         fontWeight={400}
         color={enabled ? '#000' : '#636363'}
       >
-        {enabled ? 'Active' : 'Disabled'}
+        {statusText && statusText.length > 0
+          ? statusText
+          : enabled
+          ? 'Active'
+          : 'Disabled'}
       </Text>
     </Flex>
   );

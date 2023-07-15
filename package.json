@@ -9,7 +9,7 @@
     "taco",
     "labs"
   ],
-  "version": "0.7.0",
+  "version": "0.9.7",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -28,8 +28,12 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "axios": "^1.4.0",
-    "framer-motion": "^10.12.17",
-    "js-cookie": "^3.0.5"
+    "framer-motion": "^10.12.18",
+    "hex-to-css-filter": "^5.4.0",
+    "js-cookie": "^3.0.5",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-text-mask": "^5.5.0",
+    "text-mask-addons": "^3.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,6 +58,7 @@
     "@types/js-cookie": "^3.0.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-text-mask": "^5.4.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",

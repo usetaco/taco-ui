@@ -25,9 +25,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
+var colors_1 = require("../util/colors");
 var PrimaryButton = function (_a) {
-    var text = _a.text, onClick = _a.onClick, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.loading, loading = _c === void 0 ? false : _c;
-    return (React.createElement(react_1.Button, { backgroundColor: "#000", color: "#fff", _hover: { backgroundColor: '#6C757D', color: '#fff' }, onClick: onClick, isDisabled: disabled, isLoading: loading, fontWeight: 400 }, text));
+    var _b = _a.color, color = _b === void 0 ? '#000' : _b, _c = _a.type, type = _c === void 0 ? 'button' : _c, text = _a.text, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, onClick = _a.onClick, _e = _a.disabled, disabled = _e === void 0 ? false : _e, _f = _a.loading, loading = _f === void 0 ? false : _f;
+    var hoverColor;
+    var fontColor;
+    var fontLightOrDark = (0, colors_1.getLightOrDark)(color);
+    if (fontLightOrDark === 'light') {
+        fontColor = '#000';
+        hoverColor = (0, colors_1.changeShade)(color, -30);
+    }
+    else {
+        fontColor = '#fff';
+        hoverColor = (0, colors_1.changeShade)(color, 30);
+    }
+    return (React.createElement(react_1.Button, { backgroundColor: color, color: fontColor, type: type, fontWeight: 400, _hover: { backgroundColor: hoverColor, color: fontColor }, onClick: onClick, isDisabled: disabled, isLoading: loading, width: fullWidth ? '100%' : 'auto' }, text));
 };
 exports.default = PrimaryButton;
 //# sourceMappingURL=PrimaryButton.js.map

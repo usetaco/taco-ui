@@ -23,6 +23,15 @@ import SaveButton from './src/components/ui/SaveButton';
 import SelectField from './src/components/form/SelectField';
 import TacoModal from './src/components/ui/TacoModal';
 import NumberField from './src/components/form/NumberField';
+import LoadingWrapper from './src/components/ui/LoadingWrapper';
+import SlideCarousel from './src/components/ui/SlideCarousel';
+import { TacoSlide } from './src/components/types/TacoSlide';
+import { TacoSelectOption } from './src/components/types/TacoSelectOption';
+import { TacoTheme } from './src/components/types/TacoTheme';
+import CheckboxField from './src/components/form/CheckboxField';
+import SignupForm from './src/components/auth/SignupForm';
+import LoginForm from './src/components/auth/LoginForm';
+import CurrencyField from './src/components/form/CurrencyField';
 
 export {
   PrimaryButton,
@@ -40,6 +49,12 @@ export {
   SaveButton,
   TacoModal,
   NumberField,
+  LoadingWrapper,
+  SlideCarousel,
+  CheckboxField,
+  CurrencyField,
+  LoginForm,
+  SignupForm,
   useTacoApiClient,
   TacoApiClientProvider,
   useTacoError,
@@ -50,4 +65,7 @@ export {
   TacoDataColumn,
   TacoError,
   TacoMenuItem,
+  TacoSlide,
+  TacoSelectOption,
+  TacoTheme,
 };

@@ -26,9 +26,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var NavBar = function (_a) {
-    var color = _a.color, onClick = _a.onClick;
-    return (React.createElement(react_1.Flex, { position: "fixed", align: "center", justify: "space-between", width: "100%", padding: 2, backgroundColor: "#fff" },
-        React.createElement(react_1.Image, { src: "/logo.png", width: "200px", height: "auto", _hover: { cursor: 'pointer' }, onClick: onClick })));
+    var _b = _a.logoPath, logoPath = _b === void 0 ? '/logo.png' : _b, _c = _a.showAuth, showAuth = _c === void 0 ? false : _c, authNav = _a.authNav, onClick = _a.onClick;
+    return (React.createElement(react_1.Flex, { position: "fixed", align: "center", justify: "space-between", width: "100%", padding: 3, pr: 4, backgroundColor: "#fff", zIndex: 999 },
+        React.createElement(react_1.Image, { src: logoPath, width: "200px", height: "auto", _hover: { cursor: 'pointer' }, onClick: onClick }),
+        showAuth ? (React.createElement(React.Fragment, null, authNav && authNav)) : (React.createElement(react_1.Flex, { align: "center", gap: 4 },
+            React.createElement(react_1.Link, { variant: "menu", href: "/login" }, "Login"),
+            React.createElement(react_1.Link, { variant: "menu", href: "/signup" }, "Signup")))));
 };
 exports.default = NavBar;
 //# sourceMappingURL=NavBar.js.map

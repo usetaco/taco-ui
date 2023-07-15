@@ -29,19 +29,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TacoContext = void 0;
 var react_1 = __importStar(require("react"));
 var ErrorProvider_1 = __importDefault(require("../error/ErrorProvider"));
-var react_2 = require("@chakra-ui/react");
 var ApiProvider_1 = __importDefault(require("../api/ApiProvider"));
 exports.TacoContext = (0, react_1.createContext)({});
 var TacoProvider = function (_a) {
-    var children = _a.children;
+    var theme = _a.theme, children = _a.children;
     var _b = (0, react_1.useState)(), tacoTheme = _b[0], setTacoTheme = _b[1];
+    (0, react_1.useEffect)(function () {
+        setTacoTheme(theme);
+    }, [theme]);
     return (react_1.default.createElement(exports.TacoContext.Provider, { value: {
             tacoTheme: tacoTheme,
             setTacoTheme: setTacoTheme,
         } },
-        react_1.default.createElement(react_2.ChakraProvider, { theme: tacoTheme },
-            react_1.default.createElement(ApiProvider_1.default, null,
-                react_1.default.createElement(ErrorProvider_1.default, null, children)))));
+        react_1.default.createElement(ApiProvider_1.default, null,
+            react_1.default.createElement(ErrorProvider_1.default, null, children))));
 };
 exports.default = TacoProvider;
 //# sourceMappingURL=TacoProvider.js.map

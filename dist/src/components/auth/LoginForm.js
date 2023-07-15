@@ -30,21 +30,23 @@ var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var TextField_1 = __importDefault(require("../form/TextField"));
 var PrimaryButton_1 = __importDefault(require("../ui/PrimaryButton"));
-var SecondaryButton_1 = __importDefault(require("../ui/SecondaryButton"));
 var LoginForm = function (_a) {
-    var title = _a.title, subtitle = _a.subtitle;
+    var onSubmit = _a.onSubmit;
     var _b = React.useState(), email = _b[0], setEmail = _b[1];
     var _c = React.useState(), password = _c[0], setPassword = _c[1];
-    var signIn = function () { };
+    var login = function () {
+        if (email && password) {
+            onSubmit(email, password);
+        }
+    };
     return (React.createElement("form", null,
-        React.createElement(react_1.Flex, { direction: "column", gap: 3 },
-            React.createElement(react_1.Text, { variant: "title" }, title || 'Login'),
-            subtitle && React.createElement(react_1.Text, { variant: "subtitle" }, subtitle),
-            React.createElement(TextField_1.default, { label: "Email Address", value: email, setValue: setEmail }),
-            React.createElement(TextField_1.default, { label: "Password", value: password, setValue: setPassword }),
-            React.createElement(PrimaryButton_1.default, { text: "Login", onClick: signIn }),
-            React.createElement(react_1.Text, { variant: "subtitle" }, "or"),
-            React.createElement(SecondaryButton_1.default, { text: "Forgot Password", onClick: signIn }))));
+        React.createElement(react_1.Flex, { direction: "column", align: "center", gap: 4, width: "100%" },
+            React.createElement(react_1.Flex, { direction: "column", align: "center", width: "50%", gap: 4 },
+                React.createElement(TextField_1.default, { placeholder: "Email Address", value: email, setValue: setEmail, name: "email" }),
+                React.createElement(TextField_1.default, { placeholder: "Password", type: "password", value: password, setValue: setPassword, name: "password" })),
+            React.createElement(react_1.Flex, { direction: "column", align: "center", width: "50%", gap: 3 },
+                React.createElement(PrimaryButton_1.default, { text: "Login", type: "submit", onClick: login, disabled: (!email || email.length === 0) &&
+                        (!password || password.length === 0) })))));
 };
 exports.default = LoginForm;
 //# sourceMappingURL=LoginForm.js.map

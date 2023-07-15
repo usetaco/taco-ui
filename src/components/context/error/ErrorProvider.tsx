@@ -26,6 +26,7 @@ const TacoErrorProvider: FC<TacoErrorProviderProps> = ({ children }) => {
         duration: 5000,
         isClosable: true,
       });
+      setError(undefined);
     }
   }, [error]);
 

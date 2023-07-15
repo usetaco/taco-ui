@@ -1,21 +1,26 @@
-import React, { FC, createContext, useState } from 'react';
+import React, { FC, createContext, useEffect, useState } from 'react';
 import TacoErrorProvider from '../error/ErrorProvider';
-import { ChakraProvider } from '@chakra-ui/react';
 import TacoApiClientProvider from '../api/ApiProvider';
+import { TacoTheme } from '../../types/TacoTheme';
 
 export const TacoContext = createContext(
   {} as {
-    tacoTheme: Object | undefined;
-    setTacoTheme: React.Dispatch<React.SetStateAction<Object | undefined>>;
+    tacoTheme: TacoTheme | undefined;
+    setTacoTheme: React.Dispatch<React.SetStateAction<TacoTheme | undefined>>;
   }
 );
 
 interface TacoProviderProps {
+  theme: TacoTheme;
   children: React.ReactNode;
 }
 
-const TacoProvider: FC<TacoProviderProps> = ({ children }) => {
-  const [tacoTheme, setTacoTheme] = useState<Object | undefined>();
+const TacoProvider: FC<TacoProviderProps> = ({ theme, children }) => {
+  const [tacoTheme, setTacoTheme] = useState<TacoTheme | undefined>();
+
+  useEffect(() => {
+    setTacoTheme(theme);
+  }, [theme]);
 
   return (
     <TacoContext.Provider
@@ -24,11 +29,9 @@ const TacoProvider: FC<TacoProviderProps> = ({ children }) => {
         setTacoTheme,
       }}
     >
-      <ChakraProvider theme={tacoTheme}>
-        <TacoApiClientProvider>
-          <TacoErrorProvider>{children}</TacoErrorProvider>
-        </TacoApiClientProvider>
-      </ChakraProvider>
+      <TacoApiClientProvider>
+        <TacoErrorProvider>{children}</TacoErrorProvider>
+      </TacoApiClientProvider>
     </TacoContext.Provider>
   );
 };

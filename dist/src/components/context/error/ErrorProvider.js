@@ -40,6 +40,7 @@ var TacoErrorProvider = function (_a) {
                 duration: 5000,
                 isClosable: true,
             });
+            setError(undefined);
         }
     }, [error]);
     return (react_1.default.createElement(exports.ErrorContext.Provider, { value: {
