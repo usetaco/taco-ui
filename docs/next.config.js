@@ -4,7 +4,7 @@ const nextConfig = {
   // Optional: Add a trailing slash to all paths `/about` -> `/about/`
   // trailingSlash: true,
   // Optional: Change the output directory `out` -> `dist`
-  // distDir: 'dist',
+  distDir: '../docs-dist',
 }
 
 module.exports = nextConfig
