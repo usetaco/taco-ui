@@ -20,5 +20,5 @@
     "/.src/components/styles/fonts.css",
     "/.src/util/*.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "./docs/*"]
 }
