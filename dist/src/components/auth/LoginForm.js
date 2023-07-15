@@ -45,7 +45,7 @@ var LoginForm = function (_a) {
                 React.createElement(TextField_1.default, { placeholder: "Email Address", value: email, setValue: setEmail, name: "email" }),
                 React.createElement(TextField_1.default, { placeholder: "Password", type: "password", value: password, setValue: setPassword, name: "password" })),
             React.createElement(react_1.Flex, { direction: "column", align: "center", width: "50%", gap: 3 },
-                React.createElement(PrimaryButton_1.default, { text: "Login", type: "submit", onClick: login, disabled: (!email || email.length === 0) &&
+                React.createElement(PrimaryButton_1.default, { text: "Login", onClick: login, disabled: (!email || email.length === 0) &&
                         (!password || password.length === 0) })))));
 };
 exports.default = LoginForm;
