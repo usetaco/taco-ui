@@ -27,8 +27,8 @@ var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var NavBar = function (_a) {
     var _b = _a.logoPath, logoPath = _b === void 0 ? '/logo.png' : _b, navMenu = _a.navMenu, onClick = _a.onClick;
-    return (React.createElement(react_1.Flex, { position: "fixed", align: "center", justify: "space-between", width: "100%", padding: 3, pr: 4, backgroundColor: "#fff", zIndex: 999 },
-        React.createElement(react_1.Image, { src: logoPath, width: "auto", height: "auto", maxHeight: "50px", _hover: { cursor: 'pointer' }, onClick: onClick }),
+    return (React.createElement(react_1.Flex, { position: "fixed", align: "center", justify: "space-between", width: "100%", py: 2.5, px: 4, backgroundColor: "#fff", zIndex: 999 },
+        React.createElement(react_1.Image, { src: logoPath, width: "auto", height: "auto", maxHeight: "35px", _hover: { cursor: 'pointer' }, onClick: onClick }),
         navMenu && navMenu));
 };
 exports.default = NavBar;

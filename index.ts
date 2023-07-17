@@ -33,6 +33,8 @@ import SignupForm from './src/components/auth/SignupForm'
 import LoginForm from './src/components/auth/LoginForm'
 import CurrencyField from './src/components/form/CurrencyField'
 import PageLayout from './src/components/page/PageLayout'
+import TacoImage from './src/components/ui/TacoImage'
+import TacoCard from './src/components/ui/TacoCard'
 
 export {
   PrimaryButton,
@@ -54,6 +56,8 @@ export {
   SlideCarousel,
   CheckboxField,
   CurrencyField,
+  TacoImage,
+  TacoCard,
   LoginForm,
   SignupForm,
   useTacoApiClient,

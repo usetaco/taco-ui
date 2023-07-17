@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TacoTheme = exports.TacoError = exports.TacoApiClient = exports.PageLayout = exports.TacoProvider = exports.useTacoContext = exports.TacoErrorProvider = exports.useTacoError = exports.TacoApiClientProvider = exports.useTacoApiClient = exports.SignupForm = exports.LoginForm = exports.CurrencyField = exports.CheckboxField = exports.SlideCarousel = exports.LoadingWrapper = exports.NumberField = exports.TacoModal = exports.SaveButton = exports.StepProgress = exports.SelectField = exports.TextField = exports.FieldLabel = exports.BasicTable = exports.SectionHeader = exports.PageHeader = exports.NavBar = exports.LeftNav = exports.EnabledIndicator = exports.SecondaryButton = exports.PrimaryButton = void 0;
+exports.TacoTheme = exports.TacoError = exports.TacoApiClient = exports.PageLayout = exports.TacoProvider = exports.useTacoContext = exports.TacoErrorProvider = exports.useTacoError = exports.TacoApiClientProvider = exports.useTacoApiClient = exports.SignupForm = exports.LoginForm = exports.TacoCard = exports.TacoImage = exports.CurrencyField = exports.CheckboxField = exports.SlideCarousel = exports.LoadingWrapper = exports.NumberField = exports.TacoModal = exports.SaveButton = exports.StepProgress = exports.SelectField = exports.TextField = exports.FieldLabel = exports.BasicTable = exports.SectionHeader = exports.PageHeader = exports.NavBar = exports.LeftNav = exports.EnabledIndicator = exports.SecondaryButton = exports.PrimaryButton = void 0;
 var PrimaryButton_1 = __importDefault(require("./src/components/ui/PrimaryButton"));
 exports.PrimaryButton = PrimaryButton_1.default;
 var SecondaryButton_1 = __importDefault(require("./src/components/ui/SecondaryButton"));
@@ -66,4 +66,8 @@ var CurrencyField_1 = __importDefault(require("./src/components/form/CurrencyFie
 exports.CurrencyField = CurrencyField_1.default;
 var PageLayout_1 = __importDefault(require("./src/components/page/PageLayout"));
 exports.PageLayout = PageLayout_1.default;
+var TacoImage_1 = __importDefault(require("./src/components/ui/TacoImage"));
+exports.TacoImage = TacoImage_1.default;
+var TacoCard_1 = __importDefault(require("./src/components/ui/TacoCard"));
+exports.TacoCard = TacoCard_1.default;
 //# sourceMappingURL=index.js.map

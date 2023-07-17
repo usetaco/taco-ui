@@ -1,19 +1,15 @@
-import { extendTheme, theme as base } from '@chakra-ui/react';
+import { extendTheme, theme as base } from '@chakra-ui/react'
 
 export class TacoTheme {
-  public primaryColor: string;
-  public secondaryColor: string;
-  public fontFamily: string;
-  public chakraTheme: Record<string, any>;
+  public primaryColor: string
+  public secondaryColor: string
+  public fontFamily: string
+  public chakraTheme: Record<string, any>
 
-  constructor(
-    primaryColor: string,
-    secondaryColor: string,
-    fontFamily: string
-  ) {
-    this.primaryColor = primaryColor;
-    this.secondaryColor = secondaryColor;
-    this.fontFamily = fontFamily;
+  constructor(primaryColor: string, secondaryColor: string, fontFamily: string) {
+    this.primaryColor = primaryColor
+    this.secondaryColor = secondaryColor
+    this.fontFamily = fontFamily
     this.chakraTheme = extendTheme({
       styles: {
         global: {
@@ -56,6 +52,7 @@ export class TacoTheme {
         6: '48px',
         7: '64px',
         8: '72px',
+        9: '96px',
       },
       colors: {
         ...base.colors,
@@ -66,6 +63,7 @@ export class TacoTheme {
         Text: {
           baseStyle: {
             fontFamily: `${fontFamily || 'WorkSans'}, sans-serif`,
+            fontWeight: 400,
           },
           variants: {
             title: {
@@ -114,10 +112,11 @@ export class TacoTheme {
               fontSize: '16px',
               fontWeight: 400,
               lineHeight: '16px',
+              textDecoration: 'underline',
             },
           },
         },
       },
-    });
+    })
   }
 }

@@ -2,14 +2,16 @@ import React from 'react'
 import '../styles/globals.css'
 import '../styles/fonts.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import { NavBar, PageLayout, TacoTheme } from 'taco-labs-ui'
+import { NavBar, PageLayout, TacoTheme, LeftNav } from 'taco-labs-ui'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import { GrInstall } from 'react-icons/gr'
 
 const tacoTheme = new TacoTheme('#008561', '#516E8', 'WorkSans')
 
 function MainApp({ Component, pageProps }) {
   const router = useRouter()
+
   return (
     <>
       <Head>
@@ -17,13 +19,27 @@ function MainApp({ Component, pageProps }) {
       </Head>
       <ChakraProvider theme={tacoTheme.chakraTheme}>
         <NavBar
-          logoPath="/taco-ui/logo.png"
+          logoPath={process.env.NODE_ENV === 'production' ? '/taco-ui/logo.png' : '/logo.png'}
           showAuth={false}
           onClick={() => {
             router.push('/assessments')
           }}
         />
         <PageLayout loading={false}>
+          <LeftNav
+            showLogout={false}
+            menuItems={[
+              {
+                label: 'Getting Started',
+                href: '/getting-started',
+                icon: GrInstall,
+                onClick: () => {
+                  router.push('/getting-started')
+                },
+                subItems: [{ label: 'Installation', href: '/getting-started/installation' }],
+              },
+            ]}
+          />
           <Component {...pageProps} />
         </PageLayout>
       </ChakraProvider>

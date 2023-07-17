@@ -15,8 +15,8 @@ const NavBar: FC<NavBarProps> = ({ logoPath = '/logo.png', navMenu, onClick }) =
       align="center"
       justify="space-between"
       width="100%"
-      padding={3}
-      pr={4}
+      py={2.5}
+      px={4}
       backgroundColor="#fff"
       zIndex={999}
     >
@@ -24,7 +24,7 @@ const NavBar: FC<NavBarProps> = ({ logoPath = '/logo.png', navMenu, onClick }) =
         src={logoPath}
         width="auto"
         height="auto"
-        maxHeight="50px"
+        maxHeight="35px"
         _hover={{ cursor: 'pointer' }}
         onClick={onClick}
       />

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { FC } from 'react'
-import { CircularProgress, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
+import { CircularProgress, Flex, Grid, GridItem } from '@chakra-ui/react'
 
 interface PageLayoutProps {
   children: React.ReactNode
@@ -10,11 +10,12 @@ interface PageLayoutProps {
 const PageLayout: FC<PageLayoutProps> = ({ children, loading = false }) => {
   return (
     <Grid
-      width="100vw"
       templateColumns="1fr"
+      width="100vw"
       minHeight="100vh"
       backgroundColor="#f4f4f4"
-      py={5}
+      gap={4}
+      py={9}
     >
       {loading ? (
         <GridItem>

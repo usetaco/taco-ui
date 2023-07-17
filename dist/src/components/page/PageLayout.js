@@ -27,7 +27,7 @@ var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var PageLayout = function (_a) {
     var children = _a.children, _b = _a.loading, loading = _b === void 0 ? false : _b;
-    return (React.createElement(react_1.Grid, { width: "100vw", templateColumns: "1fr", minHeight: "100vh", backgroundColor: "#f4f4f4", py: 5 }, loading ? (React.createElement(react_1.GridItem, null,
+    return (React.createElement(react_1.Grid, { templateColumns: "1fr", width: "100vw", minHeight: "100vh", backgroundColor: "#f4f4f4", gap: 4, py: 9 }, loading ? (React.createElement(react_1.GridItem, null,
         React.createElement(react_1.Flex, { height: "80vh", width: "100%", align: "center", justify: "center" },
             React.createElement(react_1.CircularProgress, { isIndeterminate: true, size: "100px", thickness: "6px", color: "primary" })))) : (React.createElement(react_1.GridItem, null, children))));
 };
