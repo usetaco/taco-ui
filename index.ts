@@ -32,10 +32,7 @@ import CheckboxField from './src/components/form/CheckboxField'
 import SignupForm from './src/components/auth/SignupForm'
 import LoginForm from './src/components/auth/LoginForm'
 import CurrencyField from './src/components/form/CurrencyField'
-import TacoWalletProvider from './src/components/context/web3/TacoWalletProvider'
-import ConnectWeb3Wallet from './src/components/web3/ConnectWeb3Wallet'
 import PageLayout from './src/components/page/PageLayout'
-import useTacoWalletContext from './src/components/context/web3/TacoWalletContext'
 
 export {
   PrimaryButton,
@@ -65,9 +62,6 @@ export {
   TacoErrorProvider,
   useTacoContext,
   TacoProvider,
-  TacoWalletProvider,
-  useTacoWalletContext,
-  ConnectWeb3Wallet,
   PageLayout,
   TacoApiClient,
   TacoDataColumn,
