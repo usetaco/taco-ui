@@ -1,3 +1,4 @@
+import React from 'react'
 import { Container, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { PageHeader } from 'taco-labs-ui'
 

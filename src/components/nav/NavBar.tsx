@@ -1,20 +1,14 @@
-import * as React from 'react';
-import { FC } from 'react';
-import { Flex, Image, Link } from '@chakra-ui/react';
+import * as React from 'react'
+import { FC } from 'react'
+import { Flex, Image } from '@chakra-ui/react'
 
 interface NavBarProps {
-  logoPath?: string;
-  showAuth?: boolean;
-  authNav: any;
-  onClick: any;
+  logoPath?: string
+  navMenu?: React.ReactNode
+  onClick: any
 }
 
-const NavBar: FC<NavBarProps> = ({
-  logoPath = '/logo.png',
-  showAuth = false,
-  authNav,
-  onClick,
-}) => {
+const NavBar: FC<NavBarProps> = ({ logoPath = '/logo.png', navMenu, onClick }) => {
   return (
     <Flex
       position="fixed"
@@ -28,26 +22,16 @@ const NavBar: FC<NavBarProps> = ({
     >
       <Image
         src={logoPath}
-        width="200px"
+        width="auto"
         height="auto"
+        maxHeight="50px"
         _hover={{ cursor: 'pointer' }}
         onClick={onClick}
       />
 
-      {showAuth ? (
-        <>{authNav && authNav}</>
-      ) : (
-        <Flex align="center" gap={4}>
-          <Link variant="menu" href="/login">
-            Login
-          </Link>
-          <Link variant="menu" href="/signup">
-            Signup
-          </Link>
-        </Flex>
-      )}
+      {navMenu && navMenu}
     </Flex>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

@@ -1,6 +1,4 @@
-#### API Swagger
-
-[Dev](https://teamgrid-api.azurewebsites.net/swagger/index.html)
+# Taco Labs UI Docs
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

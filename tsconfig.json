@@ -13,12 +13,6 @@
     "jsx": "react",
     "typeRoots": ["index.d.ts", "node_modules/@types"]
   },
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "index.ts",
-    "/.src/components/styles/fonts.css",
-    "/.src/util/*.js"
-  ],
-  "exclude": ["node_modules", "./docs/*"]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "index.ts", "./src/components/styles/*", "./src/util/*.js"],
+  "exclude": ["node_modules", "./docs", "./docs-src"]
 }

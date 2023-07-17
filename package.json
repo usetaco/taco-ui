@@ -9,7 +9,7 @@
     "taco",
     "labs"
   ],
-  "version": "0.9.7",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",

@@ -1,9 +1,8 @@
+import React from 'react'
 import '../styles/globals.css'
 import '../styles/fonts.css'
-import { Avatar, ChakraProvider } from '@chakra-ui/react'
-import MainLayout from '../layouts/main-layout'
-import { NavBar, TacoProvider, TacoTheme } from 'taco-labs-ui'
-import { LoadingProvider } from '../context/loading-context'
+import { ChakraProvider } from '@chakra-ui/react'
+import { NavBar, PageLayout, TacoTheme } from 'taco-labs-ui'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
@@ -17,18 +16,16 @@ function MainApp({ Component, pageProps }) {
         <title>Taco Labs UI Docs</title>
       </Head>
       <ChakraProvider theme={tacoTheme.chakraTheme}>
-        <LoadingProvider>
-          <NavBar
-            logoPath="/logo.png"
-            showAuth={false}
-            onClick={() => {
-              router.push('/assessments')
-            }}
-          />
-          <MainLayout>
-            <Component {...pageProps} />
-          </MainLayout>
-        </LoadingProvider>
+        <NavBar
+          logoPath="/taco-ui/logo.png"
+          showAuth={false}
+          onClick={() => {
+            router.push('/assessments')
+          }}
+        />
+        <PageLayout loading={false}>
+          <Component {...pageProps} />
+        </PageLayout>
       </ChakraProvider>
     </>
   )

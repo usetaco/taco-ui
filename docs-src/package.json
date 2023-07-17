@@ -1,20 +1,9 @@
 {
-  "name": "taco-labs-ui",
-  "description": "Taco Labs base UI component library",
+  "name": "taco-labs-ui-docs",
+  "description": "Documentation for Taco Labs base UI component library",
   "author": "Taco Labs",
-  "keywords": [
-    "react",
-    "components",
-    "ui",
-    "taco",
-    "labs"
-  ],
-  "version": "0.9.7",
+  "version": "0.0.1",
   "private": false,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/usetaco/taco-ui.git"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -34,7 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
-    "taco-labs-ui": "^0.9.7"
+    "taco-labs-ui": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.3.1",

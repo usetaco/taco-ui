@@ -25,11 +25,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
-var NavBar = function (_a) {
-    var _b = _a.logoPath, logoPath = _b === void 0 ? '/logo.png' : _b, navMenu = _a.navMenu, onClick = _a.onClick;
-    return (React.createElement(react_1.Flex, { position: "fixed", align: "center", justify: "space-between", width: "100%", padding: 3, pr: 4, backgroundColor: "#fff", zIndex: 999 },
-        React.createElement(react_1.Image, { src: logoPath, width: "auto", height: "auto", maxHeight: "50px", _hover: { cursor: 'pointer' }, onClick: onClick }),
-        navMenu && navMenu));
+var PageLayout = function (_a) {
+    var children = _a.children, _b = _a.loading, loading = _b === void 0 ? false : _b;
+    return (React.createElement(react_1.Grid, { width: "100vw", templateColumns: "1fr", minHeight: "100vh", backgroundColor: "#f4f4f4", py: 5 }, loading ? (React.createElement(react_1.GridItem, null,
+        React.createElement(react_1.Flex, { height: "80vh", width: "100%", align: "center", justify: "center" },
+            React.createElement(react_1.CircularProgress, { isIndeterminate: true, size: "100px", thickness: "6px", color: "primary" })))) : (React.createElement(react_1.GridItem, null, children))));
 };
-exports.default = NavBar;
-//# sourceMappingURL=NavBar.js.map
+exports.default = PageLayout;
+//# sourceMappingURL=PageLayout.js.map
