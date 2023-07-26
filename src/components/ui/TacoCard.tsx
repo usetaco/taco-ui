@@ -1,35 +1,22 @@
 import * as React from 'react'
 import { FC } from 'react'
-import { Box, Card, CardBody, Text } from '@chakra-ui/react'
+import { Box, Card, CardBody } from '@chakra-ui/react'
 
 interface TacoCardProps {
-  label?: string
-  title?: string
-  body: React.ReactNode
+  header?: string
   footer?: React.ReactNode
+  children: React.ReactNode
+  rest: any
 }
 
-const TacoCard: FC<TacoCardProps> = ({ label, title, body, footer }) => {
+const TacoCard: FC<TacoCardProps> = ({ header, footer, children, ...rest }) => {
   return (
-    <Card>
+    <Card
+      variant="outline"
+      {...rest}
+    >
       <CardBody p={4}>
-        {label && (
-          <Text
-            variant="callout"
-            mb={3}
-          >
-            {label}
-          </Text>
-        )}
-        {title && (
-          <Text
-            variant="subtitle"
-            mb={3}
-          >
-            {title}
-          </Text>
-        )}
-        {body}
+        {children}
         {footer && <Box>{footer}</Box>}
       </CardBody>
     </Card>

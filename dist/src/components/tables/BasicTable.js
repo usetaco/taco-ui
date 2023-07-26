@@ -55,11 +55,11 @@ var BasicCell = function (_a) {
 var BasicTable = function (_a) {
     var _b = _a.columns, columns = _b === void 0 ? [] : _b, _c = _a.data, data = _c === void 0 ? [] : _c, _d = _a.justify, justify = _d === void 0 ? 'right' : _d;
     return (React.createElement(react_1.Flex, { direction: "column", gap: 2 },
-        React.createElement(react_1.Grid, { templateColumns: '60% 20% 20%', px: 3 }, columns.map(function (c, cx) {
+        React.createElement(react_1.Grid, { templateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', px: 3 }, columns.map(function (c, cx) {
             return (React.createElement(react_1.GridItem, { key: "header-".concat(cx) },
                 React.createElement(react_1.Text, { variant: "body-light", textAlign: justify === 'right' && cx > 0 ? 'right' : 'left' }, c.label)));
         })),
-        React.createElement(react_1.Grid, { templateColumns: '60% 20% 20%', py: 3, px: 4, as: react_1.Card }, data.map(function (d, dx) {
+        React.createElement(react_1.Grid, { templateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', py: 3, px: 4, as: react_1.Card }, data.map(function (d, dx) {
             return columns.map(function (c, cx) {
                 return (React.createElement(react_1.GridItem, { key: "header-".concat(cx) },
                     React.createElement(BasicCell, { key: "cell-".concat(dx), text: d[c.fieldName], rightAlign: justify === 'right' && cx > 0 })));

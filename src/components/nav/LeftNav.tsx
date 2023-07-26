@@ -7,40 +7,67 @@ import TacoImage from '../ui/TacoImage'
 import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
 
-const navVariants = {
-  open: {
-    width: 300,
-    transition: {
-      duration: 0.1,
-    },
-  },
-  closed: {
-    width: 60,
-    transition: {
-      duration: 0.1,
-    },
-  },
-}
 interface LeftNavProps {
+  width?: number
   menuItems?: TacoMenuItem[]
   showLogout?: boolean
   logoutOnClick?: () => {}
 }
 
-const LeftNav: FC<LeftNavProps> = ({ menuItems = [], showLogout = false, logoutOnClick }) => {
+const LeftNav: FC<LeftNavProps> = ({ width = 300, menuItems = [], showLogout = false, logoutOnClick }) => {
+  const [navVariants, setNavVariants] = React.useState<any>({
+    open: {
+      width: 300,
+      transition: {
+        duration: 0.1,
+      },
+    },
+    closed: {
+      width: 60,
+      transition: {
+        duration: 0.1,
+      },
+    },
+  })
+
   const [menuOpen, setMenuOpen] = React.useState<boolean>(true)
-  const [menusOpen, setMenusOpen] = React.useState<any>({})
+  const [subMenusOpen, setSubMenusOpen] = React.useState<any>({})
 
   React.useEffect(() => {
+    let newNavVariants = {
+      open: {
+        width: width,
+        transition: {
+          duration: 0.1,
+        },
+      },
+      closed: {
+        width: 60,
+        transition: {
+          duration: 0.1,
+        },
+      },
+    }
+    setNavVariants(newNavVariants)
+  }, [width])
+
+  React.useEffect(() => {
+    resetSubMenus()
+  }, [menuItems])
+
+  const resetSubMenus = () => {
     let newMenusOpen: any = {}
     menuItems.forEach((m: TacoMenuItem, idx: number) => {
       newMenusOpen[idx] = false
     })
-    setMenusOpen(newMenusOpen)
-  }, [menuItems])
+    setSubMenusOpen(newMenusOpen)
+  }
 
   return (
-    <Box sx={{ position: 'fixed !important', left: 0, top: 0 }}>
+    <Box
+      width={`${width}px`}
+      sx={{ position: 'fixed !important', left: 0, top: 0 }}
+    >
       <Flex
         as={motion.div}
         variants={navVariants}
@@ -70,10 +97,11 @@ const LeftNav: FC<LeftNavProps> = ({ menuItems = [], showLogout = false, logoutO
                   variant="ghost"
                   padding="8px"
                   onClick={() => {
-                    if (m.subItems && m.subItems.length > 0) {
-                      let newMenusOpen = menusOpen
-                      newMenusOpen[idx] = !menusOpen[idx]
-                      setMenusOpen(newMenusOpen)
+                    if (menuOpen) {
+                      setSubMenusOpen({
+                        ...subMenusOpen,
+                        [idx]: !subMenusOpen[idx],
+                      })
                     } else {
                       m.onClick && m.onClick()
                     }
@@ -95,7 +123,7 @@ const LeftNav: FC<LeftNavProps> = ({ menuItems = [], showLogout = false, logoutO
                   </Flex>
                   {m.subItems && m.subItems.length > 0 && menuOpen && (
                     <ChevronDownIcon
-                      transform={menusOpen[idx] ? 'rotate(0deg)' : 'rotate(180deg)'}
+                      transform={subMenusOpen[idx] ? 'rotate(0deg)' : 'rotate(180deg)'}
                       transition="200ms all ease"
                     />
                   )}
@@ -103,7 +131,7 @@ const LeftNav: FC<LeftNavProps> = ({ menuItems = [], showLogout = false, logoutO
 
                 {m.subItems && m.subItems.length > 0 && (
                   <Collapse
-                    in={menusOpen[idx]}
+                    in={subMenusOpen[idx]}
                     animateOpacity
                   >
                     <Flex
@@ -194,6 +222,7 @@ const LeftNav: FC<LeftNavProps> = ({ menuItems = [], showLogout = false, logoutO
           aria-label="toggle menu"
           size="sm"
           onClick={() => {
+            resetSubMenus()
             setMenuOpen(!menuOpen)
           }}
         >

@@ -6,11 +6,11 @@ export class TacoTheme {
   public fontFamily: string
   public chakraTheme: Record<string, any>
 
-  constructor(primaryColor: string, secondaryColor: string, fontFamily: string) {
+  constructor(primaryColor: string, secondaryColor: string, fontFamily: string, componentOverrides?: any) {
     this.primaryColor = primaryColor
     this.secondaryColor = secondaryColor
     this.fontFamily = fontFamily
-    this.chakraTheme = extendTheme({
+    let newTheme = extendTheme({
       styles: {
         global: {
           body: {
@@ -118,5 +118,11 @@ export class TacoTheme {
         },
       },
     })
+
+    if (componentOverrides) {
+      this.chakraTheme.components = { ...this.chakraTheme.components, ...componentOverrides }
+    }
+
+    this.chakraTheme = newTheme
   }
 }

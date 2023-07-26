@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -22,12 +33,23 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var react_1 = require("@chakra-ui/react");
 var colors_1 = require("../util/colors");
 var PrimaryButton = function (_a) {
-    var _b = _a.color, color = _b === void 0 ? '#000' : _b, _c = _a.type, type = _c === void 0 ? 'button' : _c, text = _a.text, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, onClick = _a.onClick, _e = _a.disabled, disabled = _e === void 0 ? false : _e, _f = _a.loading, loading = _f === void 0 ? false : _f;
+    var _b = _a.color, color = _b === void 0 ? '#000' : _b, _c = _a.type, type = _c === void 0 ? 'button' : _c, text = _a.text, _d = _a.fullWidth, fullWidth = _d === void 0 ? false : _d, onClick = _a.onClick, _e = _a.disabled, disabled = _e === void 0 ? false : _e, _f = _a.loading, loading = _f === void 0 ? false : _f, rest = __rest(_a, ["color", "type", "text", "fullWidth", "onClick", "disabled", "loading"]);
     var hoverColor;
     var fontColor;
     var fontLightOrDark = (0, colors_1.getLightOrDark)(color);
@@ -39,7 +61,7 @@ var PrimaryButton = function (_a) {
         fontColor = '#fff';
         hoverColor = (0, colors_1.changeShade)(color, 30);
     }
-    return (React.createElement(react_1.Button, { backgroundColor: color, color: fontColor, type: type, fontWeight: 400, _hover: { backgroundColor: hoverColor, color: fontColor }, onClick: onClick, isDisabled: disabled, isLoading: loading, width: fullWidth ? '100%' : 'auto' }, text));
+    return (React.createElement(react_1.Button, __assign({ backgroundColor: color, color: fontColor, type: type, fontWeight: 400, _hover: { backgroundColor: hoverColor, color: fontColor }, onClick: onClick, isDisabled: disabled, isLoading: loading, width: fullWidth ? '100%' : 'auto' }, rest), text));
 };
 exports.default = PrimaryButton;
 //# sourceMappingURL=PrimaryButton.js.map

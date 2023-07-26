@@ -1,16 +1,17 @@
-import * as React from 'react';
-import { FC } from 'react';
-import { Button } from '@chakra-ui/react';
-import { changeShade, getLightOrDark } from '../util/colors';
+import * as React from 'react'
+import { FC } from 'react'
+import { Button } from '@chakra-ui/react'
+import { changeShade, getLightOrDark } from '../util/colors'
 
 interface PrimaryButtonProps {
-  color?: string;
-  type?: 'button' | 'submit' | 'reset' | undefined;
-  text: string;
-  fullWidth?: boolean;
-  onClick: () => any;
-  disabled?: boolean;
-  loading?: boolean;
+  color?: string
+  type?: 'button' | 'submit' | 'reset' | undefined
+  text: string
+  fullWidth?: boolean
+  onClick: () => any
+  disabled?: boolean
+  loading?: boolean
+  rest?: any
 }
 
 const PrimaryButton: FC<PrimaryButtonProps> = ({
@@ -21,16 +22,17 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
   onClick,
   disabled = false,
   loading = false,
+  ...rest
 }) => {
-  let hoverColor: any;
-  let fontColor: string;
-  var fontLightOrDark = getLightOrDark(color);
+  let hoverColor: any
+  let fontColor: string
+  var fontLightOrDark = getLightOrDark(color)
   if (fontLightOrDark === 'light') {
-    fontColor = '#000';
-    hoverColor = changeShade(color, -30);
+    fontColor = '#000'
+    hoverColor = changeShade(color, -30)
   } else {
-    fontColor = '#fff';
-    hoverColor = changeShade(color, 30);
+    fontColor = '#fff'
+    hoverColor = changeShade(color, 30)
   }
 
   return (
@@ -44,10 +46,11 @@ const PrimaryButton: FC<PrimaryButtonProps> = ({
       isDisabled={disabled}
       isLoading={loading}
       width={fullWidth ? '100%' : 'auto'}
+      {...rest}
     >
       {text}
     </Button>
-  );
-};
+  )
+}
 
-export default PrimaryButton;
+export default PrimaryButton

@@ -28,7 +28,7 @@ var react_1 = require("@chakra-ui/react");
 var SectionHeader = function (_a) {
     var title = _a.title, button = _a.button;
     return (React.createElement(react_1.Flex, { align: "center", justify: "space-between", width: "100%", py: 3, mt: 2 },
-        React.createElement(react_1.Text, { variant: "title" }, title),
+        React.createElement(react_1.Text, { variant: "subtitle" }, title),
         button && button));
 };
 exports.default = SectionHeader;

@@ -14,12 +14,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TacoTheme = void 0;
 var react_1 = require("@chakra-ui/react");
 var TacoTheme = (function () {
-    function TacoTheme(primaryColor, secondaryColor, fontFamily) {
+    function TacoTheme(primaryColor, secondaryColor, fontFamily, componentOverrides) {
         var _a, _b;
         this.primaryColor = primaryColor;
         this.secondaryColor = secondaryColor;
         this.fontFamily = fontFamily;
-        this.chakraTheme = (0, react_1.extendTheme)({
+        var newTheme = (0, react_1.extendTheme)({
             styles: {
                 global: {
                     body: {
@@ -105,6 +105,10 @@ var TacoTheme = (function () {
                 },
             },
         });
+        if (componentOverrides) {
+            this.chakraTheme.components = __assign(__assign({}, this.chakraTheme.components), componentOverrides);
+        }
+        this.chakraTheme = newTheme;
     }
     return TacoTheme;
 }());
