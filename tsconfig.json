@@ -6,12 +6,14 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "removeComments": true,
-    "declaration": false,
+    "declaration": true,
+    "declarationDir": "./types",
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "jsx": "react",
-    "typeRoots": ["index.d.ts", "node_modules/@types"]
+    "typeRoots": ["index.d.ts", "node_modules/@types"],
+    "lib": ["es2015", "dom"]
   },
   "include": ["./src/**/*.tsx", "./src/**/*.ts", "index.ts", "./src/components/styles/*", "./src/util/*.js"],
   "exclude": ["node_modules", "./docs", "./docs-src"]

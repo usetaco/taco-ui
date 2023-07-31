@@ -59,7 +59,7 @@ const SelectField: FC<SelectFieldProps> = ({
               _hover={{ cursor: 'pointer' }}
             >
               <Flex justify="space-between" align="center" width="100%">
-                <Text variant="app-body">
+                <Text variant="body">
                   {selectedOption?.value
                     ? selectedOption?.label
                     : options[0].label}
