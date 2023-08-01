@@ -1,9 +1,20 @@
 import * as React from 'react'
+import { FC } from 'react'
 import { Button } from '@chakra-ui/react'
 import { changeShade, getLightOrDark } from '../util/colors'
-import PropTypes from 'prop-types'
 
-const PrimaryButton = ({
+interface PrimaryButtonProps {
+  color: string
+  type: 'button' | 'submit' | 'reset' | undefined
+  text: string
+  fullWidth: boolean
+  onClick: any
+  disabled: boolean
+  loading: boolean
+  rest: any
+}
+
+const PrimaryButton: FC<PrimaryButtonProps> = ({
   color = '#000',
   type = 'button',
   text,
@@ -12,7 +23,7 @@ const PrimaryButton = ({
   disabled = false,
   loading = false,
   ...rest
-}: any) => {
+}) => {
   let hoverColor: any
   let fontColor: string
   var fontLightOrDark = getLightOrDark(color)
@@ -41,18 +52,5 @@ const PrimaryButton = ({
     </Button>
   )
 }
-
-PrimaryButton.propTypes = {
-  color: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'submit', 'reset', undefined]),
-  text: PropTypes.string,
-  fullWidth: PropTypes.bool,
-  onClick: () => PropTypes.func,
-  disabled: PropTypes.bool,
-  loading: PropTypes.bool,
-  rest: PropTypes.any,
-}
-
-declare const PrimaryButton: React.FC<PropTypes.InferProps<typeof PrimaryButton.propTypes>>
 
 export default PrimaryButton

@@ -8,7 +8,10 @@ interface ColorDisplayProps {
 
 const ColorDisplay: FC<ColorDisplayProps> = ({ color }) => {
   return (
-    <Flex align="center" gap="12px" _hover={{ cursor: 'pointer' }}>
+    <Flex
+      align="center"
+      gap="12px"
+    >
       <Box
         height="25px"
         width="25px"
@@ -16,7 +19,7 @@ const ColorDisplay: FC<ColorDisplayProps> = ({ color }) => {
         backgroundColor={color || '#fff'}
         border="1px solid #eee"
       ></Box>
-      <Text variant="body">{color || '#fff'}</Text>
+      <Text variant="body">{color || ''}</Text>
     </Flex>
   )
 }
